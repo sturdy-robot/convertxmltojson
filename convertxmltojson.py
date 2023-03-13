@@ -14,14 +14,14 @@ def get_files(path_to_file):
         for file in files_dir:
             if file.endswith(".xml"):
                 filepath = os.path.join(path, file)
-                logging.debug('Got file: ' + filepath)
+                logging.debug(f'Got file: {filepath}')
                 files.append(filepath)
-    
+
     return files
 
 
 def read_xml(filepath):
-    logging.debug('Reading XML file ' + filepath)
+    logging.debug(f'Reading XML file {filepath}')
     with open(filepath, 'r', encoding='utf-8') as fp:
         return fp.read()
 
@@ -46,9 +46,9 @@ def get_json_file_names(files, output_folder):
         if not os.path.exists(output_folder_path):
             os.mkdir(output_folder_path)
         output_filepath = os.path.join(output_folder_path, output_file_name)
-        logging.debug('Json filename: ' + output_filepath)
+        logging.debug(f'Json filename: {output_filepath}')
         output_file_paths.append(output_filepath)
-    
+
     return output_file_paths
 
 
